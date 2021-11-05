@@ -1,0 +1,38 @@
+html {
+  --color-bg--theme-light: white;
+  --color-text--theme-light: black;
+  --color-scheme--theme-light: light;
+  --color-bg--theme-dark: black;
+  --color-text--theme-dark: white;
+  --color-scheme--theme-dark: dark;
+
+  --color-bg: var(--color-bg--theme-light);
+  --color-text: var(--color-text--theme-light);
+  --color-scheme: var(--color-scheme--theme-light);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  color-scheme: var(--color-scheme);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --color-bg: var(--color-bg--theme-dark);
+    --color-text: var(--color-text--theme-dark);
+    --color-scheme: var(--color-scheme--theme-dark);
+  }
+}
+
+.theme-light {
+  --color-bg: var(--color-bg--theme-light);
+  --color-text: var(--color-text--theme-light);
+  --color-scheme: var(--color-scheme--theme-light);
+}
+
+.theme-dark {
+  --color-bg: var(--color-bg--theme-dark);
+  --color-text: var(--color-text--theme-dark);
+  --color-scheme: var(--color-scheme--theme-dark);
+}

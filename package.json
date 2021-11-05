@@ -1,0 +1,12 @@
+{
+  "name": "theme-toggle",
+  "version": "0.1.0",
+  "description": "Setting color scheme for a website",
+  "main": "index.js",
+  "author": "Michael Großklaus <mail@mgrossklaus.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "@factorial/stack-core": "^0.3.15",
+    "@factorial/stack-javascript": "^0.5.10"
+  }
+}
