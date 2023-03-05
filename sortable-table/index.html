@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sortable Table</title>
+		<script src="./index.js"></script>
+		<script src="../theme-toggle/index.js"></script>
+		<link rel="stylesheet" href="https://www.mgrossklaus.de/css/common.css" />
+		<link rel="stylesheet" href="../index.css" />
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<p class="BackLink">
+			<small>&larr; <a href="../">Web Components</a></small>
+		</p>
+		<h1>Sortable Table</h1>
+		<p>
+			<small
+				><i
+					>Table examples taken from
+					<a href="https://www.w3.org/WAI/tutorials/tables/"
+						>https://www.w3.org/WAI/tutorials/tables/</a
+					>.</i
+				></small
+			>
+		</p>
+
+		<h2>Tables with One Header</h2>
+
+		<div class="wrapper">
+			<h3>Table with header cells in the top row only</h3>
+			<sortable-table>
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Event</th>
+							<th>Venue</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>12 February</td>
+							<td>Waltz with Strauss</td>
+							<td>Main Hall</td>
+						</tr>
+						<tr>
+							<td>24 March</td>
+							<td>The Obelisks</td>
+							<td>West Wing</td>
+						</tr>
+						<tr>
+							<td>14 April</td>
+							<td>The What</td>
+							<td>Main Hall</td>
+						</tr>
+					</tbody>
+				</table>
+			</sortable-table>
+		</div>
+
+		<div class="wrapper">
+			<h3>Table with header cells in the first column only</h3>
+			<sortable-table>
+				<table>
+					<tbody>
+						<tr>
+							<th>Date</th>
+							<td>12 February</td>
+							<td>24 March</td>
+							<td>14 April</td>
+						</tr>
+						<tr>
+							<th>Event</th>
+							<td>Waltz with Strauss</td>
+							<td>The Obelisks</td>
+							<td>The What</td>
+						</tr>
+						<tr>
+							<th>Venue</th>
+							<td>Main Hall</td>
+							<td>West Wing</td>
+							<td>Main Hall</td>
+						</tr>
+					</tbody>
+				</table>
+			</sortable-table>
+		</div>
+
+		<h2>Tables with Two Headers</h2>
+
+		<div class="wrapper">
+			<h3>Table with header cells in the top row and first column</h3>
+			<sortable-table>
+				<table>
+					<caption>
+						Delivery slots:
+					</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>Monday</th>
+							<th>Tuesday</th>
+							<th>Wednesday</th>
+							<th>Thursday</th>
+							<th>Friday</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">09:00 &ndash; 11:00</th>
+							<td>Closed</td>
+							<td>Open</td>
+							<td>Open</td>
+							<td>Closed</td>
+							<td>Closed</td>
+						</tr>
+						<tr>
+							<th scope="row">11:00 &ndash; 13:00</th>
+							<td>Open</td>
+							<td>Open</td>
+							<td>Closed</td>
+							<td>Closed</td>
+							<td>Closed</td>
+						</tr>
+						<tr>
+							<th scope="row">13:00 &ndash; 15:00</th>
+							<td>Open</td>
+							<td>Open</td>
+							<td>Open</td>
+							<td>Closed</td>
+							<td>Closed</td>
+						</tr>
+						<tr>
+							<th scope="row">15:00 &ndash; 17:00</th>
+							<td>Closed</td>
+							<td>Closed</td>
+							<td>Closed</td>
+							<td>Open</td>
+							<td>Open</td>
+						</tr>
+					</tbody>
+				</table>
+			</sortable-table>
+		</div>
+
+		<script>
+			Array.from(document.querySelectorAll("code")).forEach(
+				(code) => (code.textContent = code.innerHTML.trim())
+			);
+		</script>
+
+		<div class="ThemeToggle">
+			<theme-toggle></theme-toggle>
+		</div>
+	</body>
+</html>

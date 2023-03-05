@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Theme Toggle</title>
+		<script src="./index.js"></script>
+		<link rel="stylesheet" href="https://www.mgrossklaus.de/css/common.css" />
+		<link rel="stylesheet" href="../index.css" />
+		<link rel="stylesheet" href="./index.css" />
+	</head>
+	<body>
+		<p class="BackLink">
+			<small>&larr; <a href="../">Web Components</a></small>
+		</p>
+
+		<h1>Theme Toggle</h1>
+
+		<div class="wrapper">
+			<h2>Default</h2>
+			<theme-toggle></theme-toggle>
+			<h3>Input</h3>
+			<pre><code class="input"><theme-toggle></theme-toggle></code></pre>
+			<h3>Output</h3>
+			<pre><code class="output"></code></pre>
+		</div>
+
+		<div class="wrapper">
+			<h2>With <code>themes</code> option</h2>
+			<theme-toggle
+				class="themes-option"
+				themes="auto light medium dark"
+			></theme-toggle>
+			<h3>Input</h3>
+			<pre><code class="input"><theme-toggle class="themes-option" themes="auto light medium dark"></theme-toggle></code></pre>
+			<h3>Output</h3>
+			<pre><code class="output"></code></pre>
+		</div>
+
+		<div class="wrapper">
+			<h2>With <code>name</code> option</h2>
+			<theme-toggle class="name-option" name="custom-name"></theme-toggle>
+			<h3>Input</h3>
+			<pre><code class="input"><theme-toggle class="name-option" name="custom-name"></theme-toggle></code></pre>
+			<h3>Output</h3>
+			<pre><code class="output"></code></pre>
+		</div>
+
+		<div class="wrapper">
+			<h2>With Light DOM</h2>
+			<theme-toggle class="light-dom">
+				<div>
+					<input
+						type="radio"
+						name="light-dom-name"
+						value="auto"
+						id="theme-auto"
+					/>
+					<label for="theme-auto">auto</label>
+				</div>
+				<div>
+					<input
+						type="radio"
+						name="light-dom-name"
+						value="light"
+						id="theme-light"
+					/>
+					<label for="theme-light">light</label>
+				</div>
+				<div>
+					<input
+						type="radio"
+						name="light-dom-name"
+						value="dark"
+						id="theme-dark"
+					/>
+					<label for="theme-dark">dark</label>
+				</div>
+			</theme-toggle>
+			<pre><code><theme-toggle class="light-dom">
+  <div>
+    <input type="radio" name="light-dom-name" value="auto" id="theme-auto">
+    <label for="theme-auto">auto</label>
+  </div>
+  <div>
+    <input type="radio" name="light-dom-name" value="light" id="theme-light">
+    <label for="theme-light">light</label>
+  </div>
+  <div>
+    <input type="radio" name="light-dom-name" value="dark" id="theme-dark">
+    <label for="theme-dark">dark</label>
+  </div>
+</theme-toggle></code></pre>
+		</div>
+
+		<script>
+			Array.from(document.querySelectorAll("pre code")).forEach(
+				(code) => (code.textContent = code.innerHTML.trim())
+			);
+
+			requestAnimationFrame(() => {
+				document.querySelectorAll(".input").forEach((input) => {
+					const wrapper = input.closest(".wrapper");
+					const themeToggle = wrapper.querySelector("theme-toggle");
+					const output = wrapper.querySelector(".output");
+
+					output.textContent = process(themeToggle.outerHTML);
+				});
+			});
+
+			function process(str) {
+				var div = document.createElement("div");
+				div.innerHTML = str.trim();
+
+				return format(div, 0).innerHTML;
+			}
+
+			function format(node, level) {
+				const indentBefore = new Array(level++ + 1).join("	");
+				const indentAfter = new Array(level - 1).join("	");
+
+				for (let i = 0; i < node.children.length; i++) {
+					let textNode;
+
+					if (level === 1 && i === 0) {
+						textNode = document.createTextNode(indentBefore);
+					} else {
+						textNode = document.createTextNode("\n" + indentBefore);
+					}
+
+					node.insertBefore(textNode, node.children[i]);
+
+					format(node.children[i], level);
+
+					if (node.lastElementChild == node.children[i]) {
+						textNode = document.createTextNode("\n" + indentAfter);
+						node.appendChild(textNode);
+					}
+				}
+
+				return node;
+			}
+		</script>
+	</body>
+</html>

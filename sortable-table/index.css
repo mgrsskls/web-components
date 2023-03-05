@@ -1,0 +1,35 @@
+table {
+	border-collapse: collapse;
+}
+
+caption {
+	text-align: start;
+	font-weight: bold;
+	padding-block-end: 0.5em;
+}
+
+th,
+td {
+	border: var(--divider) var(--color-outline);
+	padding: 0.5em;
+}
+
+th {
+	text-align: start;
+	position: relative;
+	padding-inline-end: 3em;
+}
+
+button {
+	appearance: none;
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	position: absolute;
+	inset-inline-end: 0.5em;
+}
+
+button:not([aria-pressed="true"]) {
+	color: #999;
+}

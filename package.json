@@ -1,12 +1,16 @@
 {
-  "name": "theme-toggle",
-  "version": "0.1.0",
-  "description": "Setting color scheme for a website",
-  "main": "index.js",
-  "author": "Michael Großklaus <mail@mgrossklaus.de>",
-  "license": "MIT",
-  "devDependencies": {
-    "@factorial/stack-core": "^0.3.15",
-    "@factorial/stack-javascript": "^0.5.10"
-  }
+	"author": "Michael Großklaus <mail@mgrossklaus.de>",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"eslint": "^8.35.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-jest": "^27.2.1",
+		"jest": "^29.5.0",
+		"jest-environment-jsdom": "^29.5.0"
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+	}
 }

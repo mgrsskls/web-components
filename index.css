@@ -1,38 +1,45 @@
-html {
-  --color-bg--theme-light: white;
-  --color-text--theme-light: black;
-  --color-scheme--theme-light: light;
-  --color-bg--theme-dark: black;
-  --color-text--theme-dark: white;
-  --color-scheme--theme-dark: dark;
-
-  --color-bg: var(--color-bg--theme-light);
-  --color-text: var(--color-text--theme-light);
-  --color-scheme: var(--color-scheme--theme-light);
-}
-
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  color-scheme: var(--color-scheme);
+	background: var(--color-bg);
+	color: var(--color-text);
+	margin: clamp(1rem, 4vw, 3rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    --color-bg: var(--color-bg--theme-dark);
-    --color-text: var(--color-text--theme-dark);
-    --color-scheme: var(--color-scheme--theme-dark);
-  }
+.wrapper + .wrapper {
+	margin-block-start: 2rem;
 }
 
-.theme-light {
-  --color-bg: var(--color-bg--theme-light);
-  --color-text: var(--color-text--theme-light);
-  --color-scheme: var(--color-scheme--theme-light);
+label {
+	line-height: 1;
 }
 
-.theme-dark {
-  --color-bg: var(--color-bg--theme-dark);
-  --color-text: var(--color-text--theme-dark);
-  --color-scheme: var(--color-scheme--theme-dark);
+pre {
+	tab-size: 3;
+}
+
+.BackLink {
+	border-block-end: var(--divider) var(--color-outline);
+	padding-block-end: var(--spacing);
+}
+
+.ThemeToggle {
+	border-block-start: var(--divider) var(--color-outline);
+	margin-block-start: var(--spacing);
+	padding-block-start: var(--spacing);
+}
+
+.ThemeToggle theme-toggle {
+	border: none;
+	padding: 0;
+}
+
+theme-toggle {
+	display: flex;
+	gap: 1em;
+	padding: 1em;
+	border: var(--divider) var(--color-outline);
+}
+
+theme-toggle div {
+	display: flex;
+	gap: 0.5em;
 }

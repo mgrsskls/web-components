@@ -1,0 +1,32 @@
+:is(.themes-option, .name-option, .light-dom):has([value="auto"]:checked) {
+	color-scheme: light dark;
+}
+
+:is(.themes-option, .name-option, .light-dom):has([value="light"]:checked) {
+	background: hsl(0 0% 100%);
+	color: #000;
+	color-scheme: light;
+}
+
+:is(.themes-option, .name-option, .light-dom):has([value="dark"]:checked) {
+	background: hsl(0 0% 0%);
+	color: #fff;
+	color-scheme: dark;
+}
+
+.themes-option:has([value="medium"]:checked) {
+	background: hsl(0 0% 50%);
+	color: #fff;
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	.element-option,
+	.themes-option,
+	.name-option,
+	.light-dom {
+		background: hsl(0 0% 0%);
+		color: #fff;
+		color-scheme: dark;
+	}
+}
