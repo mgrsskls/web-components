@@ -1,9 +1,8 @@
-const DEFAULT_THEMES = ["auto", "light", "dark"];
-const DEFAULT_NAME = "theme";
-
 customElements.define(
 	"theme-toggle",
 	class ThemeToggle extends HTMLElement {
+		#DEFAULT_THEMES = ["auto", "light", "dark"];
+		#DEFAULT_NAME = "theme";
 		#index;
 		#name;
 		#themes;
@@ -32,9 +31,9 @@ customElements.define(
 				} else {
 					this.#name =
 						this.getAttribute("name") ||
-						`${DEFAULT_NAME}${this.#index > 0 ? `-${this.#index}` : ""}`;
+						`${this.#DEFAULT_NAME}${this.#index > 0 ? `-${this.#index}` : ""}`;
 					this.#themes =
-						this.getAttribute("themes")?.split(" ") || DEFAULT_THEMES;
+						this.getAttribute("themes")?.split(" ") || this.#DEFAULT_THEMES;
 					this.#currentTheme = this.#getStoredTheme() || this.#themes[0];
 					this.#inputs = this.#addOptions();
 				}

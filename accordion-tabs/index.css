@@ -1,0 +1,70 @@
+accordion-tabs {
+	display: block;
+}
+
+accordion-tabs details {
+	border-block-end: var(--divider) var(--color-outline);
+}
+
+accordion-tabs details:first-child {
+	border-block-start: var(--divider) var(--color-outline);
+}
+
+accordion-tabs summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-block: 0.75em;
+	list-style: none;
+	font-weight: 600;
+}
+
+accordion-tabs summary::-webkit-details-marker {
+	display: none;
+}
+
+accordion-tabs summary::after {
+	display: block;
+	content: "";
+	inline-size: 1em;
+	block-size: 0.5625em;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 1 8 8 1 1'/%3E%3C/svg%3E");
+}
+
+html:has([name="theme"][value="light"]:checked) accordion-tabs summary::after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 1 8 8 1 1'/%3E%3C/svg%3E");
+}
+
+html:has([name="theme"][value="dark"]:checked) accordion-tabs summary::after {
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' fill='none'%3E%3Cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 1 8 8 1 1'/%3E%3C/svg%3E");
+}
+
+accordion-tabs details p {
+	margin-block-start: 0;
+}
+
+accordion-tabs :not([open]) > summary::after {
+	rotate: -90deg;
+}
+
+accordion-tabs ol {
+	border-block-end: var(--divider) var(--color-outline);
+	list-style: none;
+	display: flex;
+	margin-block-start: 0;
+	padding-inline: 0;
+}
+
+accordion-tabs button {
+	appearance: none;
+	background: none;
+	border: var(--divider) transparent;
+	font: inherit;
+	padding: 0.5em 1em;
+	margin-block-end: -0.0625em;
+}
+
+accordion-tabs button[aria-selected="true"] {
+	border-color: var(--color-outline) var(--color-outline) var(--color-bg)
+		var(--color-outline);
+}
