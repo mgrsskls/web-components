@@ -1,8 +1,8 @@
 body {
 	background: var(--color-bg);
 	color: var(--color-text);
-	margin: clamp(1rem, 4vw, 3rem);
-	margin-block-start: 0;
+	padding: clamp(1rem, 4vw, 3rem);
+	padding-block-start: 0;
 }
 
 .wrapper + .wrapper {
