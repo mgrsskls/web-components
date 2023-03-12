@@ -15,135 +15,177 @@
 		<p class="BackLink">
 			<small>&larr; <a href="../">Web Components</a></small>
 		</p>
-		<h1>Sortable Table</h1>
-		<p>
-			<small
-				><i
-					>Table examples taken from
-					<a href="https://www.w3.org/WAI/tutorials/tables/"
-						>https://www.w3.org/WAI/tutorials/tables/</a
-					>.</i
-				></small
-			>
-		</p>
 
-		<h2>Tables with One Header</h2>
+		<div class="RichText">
+			<h1>Sortable Table</h1>
 
-		<div class="wrapper">
-			<h3>Table with header cells in the top row only</h3>
-			<sortable-table>
-				<table>
-					<thead>
-						<tr>
-							<th>Date</th>
-							<th>Event</th>
-							<th>Venue</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>12 February</td>
-							<td>Waltz with Strauss</td>
-							<td>Main Hall</td>
-						</tr>
-						<tr>
-							<td>24 March</td>
-							<td>The Obelisks</td>
-							<td>West Wing</td>
-						</tr>
-						<tr>
-							<td>14 April</td>
-							<td>The What</td>
-							<td>Main Hall</td>
-						</tr>
-					</tbody>
-				</table>
-			</sortable-table>
-		</div>
+			<p>
+				This Web Component adds sort functionality to all table heads. The table
+				can then be sorted ascending and descending and sorting can be reset to
+				the original state.
+			</p>
 
-		<div class="wrapper">
-			<h3>Table with header cells in the first column only</h3>
-			<sortable-table>
-				<table>
-					<tbody>
-						<tr>
-							<th>Date</th>
-							<td>12 February</td>
-							<td>24 March</td>
-							<td>14 April</td>
-						</tr>
-						<tr>
-							<th>Event</th>
-							<td>Waltz with Strauss</td>
-							<td>The Obelisks</td>
-							<td>The What</td>
-						</tr>
-						<tr>
-							<th>Venue</th>
-							<td>Main Hall</td>
-							<td>West Wing</td>
-							<td>Main Hall</td>
-						</tr>
-					</tbody>
-				</table>
-			</sortable-table>
-		</div>
+			<p>
+				Table examples taken from
+				<a href="https://www.w3.org/WAI/tutorials/tables/"
+					>https://www.w3.org/WAI/tutorials/tables/</a
+				>.
+			</p>
 
-		<h2>Tables with Two Headers</h2>
+			<p>
+				<a
+					href="https://github.com/mgrsskls/web-components/blob/main/sortable-table/index.js"
+					>Source code</a
+				>
+			</p>
 
-		<div class="wrapper">
-			<h3>Table with header cells in the top row and first column</h3>
-			<sortable-table>
-				<table>
-					<caption>
-						Delivery slots:
-					</caption>
-					<thead>
-						<tr>
-							<th></th>
-							<th>Monday</th>
-							<th>Tuesday</th>
-							<th>Wednesday</th>
-							<th>Thursday</th>
-							<th>Friday</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">09:00 &ndash; 11:00</th>
-							<td>Closed</td>
-							<td>Open</td>
-							<td>Open</td>
-							<td>Closed</td>
-							<td>Closed</td>
-						</tr>
-						<tr>
-							<th scope="row">11:00 &ndash; 13:00</th>
-							<td>Open</td>
-							<td>Open</td>
-							<td>Closed</td>
-							<td>Closed</td>
-							<td>Closed</td>
-						</tr>
-						<tr>
-							<th scope="row">13:00 &ndash; 15:00</th>
-							<td>Open</td>
-							<td>Open</td>
-							<td>Open</td>
-							<td>Closed</td>
-							<td>Closed</td>
-						</tr>
-						<tr>
-							<th scope="row">15:00 &ndash; 17:00</th>
-							<td>Closed</td>
-							<td>Closed</td>
-							<td>Closed</td>
-							<td>Open</td>
-							<td>Open</td>
-						</tr>
-					</tbody>
-				</table>
-			</sortable-table>
+			<h2>Examples</h2>
+
+			<h3>Columns</h3>
+
+			<div class="wrapper">
+				<sortable-table>
+					<table>
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Event</th>
+								<th>Venue</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>12 February</td>
+								<td>Waltz with Strauss</td>
+								<td>Main Hall</td>
+							</tr>
+							<tr>
+								<td>24 March</td>
+								<td>The Obelisks</td>
+								<td>West Wing</td>
+							</tr>
+							<tr>
+								<td>14 April</td>
+								<td>The What</td>
+								<td>Main Hall</td>
+							</tr>
+						</tbody>
+					</table>
+				</sortable-table>
+			</div>
+
+			<h3>Rows</h3>
+
+			<div class="wrapper">
+				<sortable-table>
+					<table>
+						<tbody>
+							<tr>
+								<th>Date</th>
+								<td>12 February</td>
+								<td>24 March</td>
+								<td>14 April</td>
+							</tr>
+							<tr>
+								<th>Event</th>
+								<td>Waltz with Strauss</td>
+								<td>The Obelisks</td>
+								<td>The What</td>
+							</tr>
+							<tr>
+								<th>Venue</th>
+								<td>Main Hall</td>
+								<td>West Wing</td>
+								<td>Main Hall</td>
+							</tr>
+						</tbody>
+					</table>
+				</sortable-table>
+			</div>
+
+			<h3>Columns &amp; Rows</h3>
+
+			<div class="wrapper">
+				<sortable-table>
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Monday</th>
+								<th>Tuesday</th>
+								<th>Wednesday</th>
+								<th>Thursday</th>
+								<th>Friday</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">09:00 &ndash; 11:00</th>
+								<td>Closed</td>
+								<td>Open</td>
+								<td>Open</td>
+								<td>Closed</td>
+								<td>Closed</td>
+							</tr>
+							<tr>
+								<th scope="row">11:00 &ndash; 13:00</th>
+								<td>Open</td>
+								<td>Open</td>
+								<td>Closed</td>
+								<td>Closed</td>
+								<td>Closed</td>
+							</tr>
+							<tr>
+								<th scope="row">13:00 &ndash; 15:00</th>
+								<td>Open</td>
+								<td>Open</td>
+								<td>Open</td>
+								<td>Closed</td>
+								<td>Closed</td>
+							</tr>
+							<tr>
+								<th scope="row">15:00 &ndash; 17:00</th>
+								<td>Closed</td>
+								<td>Closed</td>
+								<td>Closed</td>
+								<td>Open</td>
+								<td>Open</td>
+							</tr>
+						</tbody>
+					</table>
+				</sortable-table>
+			</div>
+
+			<h2>Usage</h2>
+
+			<pre><code>&lt;sortable-table&gt;
+	&lt;table&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+				&lt;th&gt;Date&lt;/th&gt;
+				&lt;th&gt;Event&lt;/th&gt;
+				&lt;th&gt;Venue&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;12 February&lt;/td&gt;
+				&lt;td&gt;Waltz with Strauss&lt;/td&gt;
+				&lt;td&gt;Main Hall&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;24 March&lt;/td&gt;
+				&lt;td&gt;The Obelisks&lt;/td&gt;
+				&lt;td&gt;West Wing&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;14 April&lt;/td&gt;
+				&lt;td&gt;The What&lt;/td&gt;
+				&lt;td&gt;Main Hall&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/sortable-table&gt;</code></pre>
 		</div>
 
 		<div class="ThemeToggle">

@@ -6,7 +6,7 @@
 		<title>Accordion / Tabs</title>
 		<script src="../theme-toggle/index.js"></script>
 		<script src="../theme.js"></script>
-		<script src="./index.js"></script>
+		<script src="./index.js" defer></script>
 		<link rel="stylesheet" href="https://www.mgrossklaus.de/css/common.css" />
 		<link rel="stylesheet" href="../index.css" />
 		<link rel="stylesheet" href="./index.css" />
@@ -16,65 +16,124 @@
 			<small>&larr; <a href="../">Web Components</a></small>
 		</p>
 
-		<h1>Accordion / Tabs</h1>
+		<div class="RichText">
+			<h1>Accordion / Tabs</h1>
 
-		<div class="wrapper">
-			<div class="wc">
-				<accordion-tabs breakpoint="48rem">
-					<details>
-						<summary>A doggo</summary>
-						<p>
-							Doggo ipsum shooberino most angery pupper I have ever seen pats
-							super chub puggorino lotsa pats, fluffer woofer heckin good boys
-							and girls very jealous pupper. Shibe corgo super chub heck big ol
-							heckin angery woofer length boy, shoob most angery pupper I have
-							ever seen thicc pupper. Vvv fat boi much ruin diet puggo fat boi
-							heckin good boys and girls heckin good boys, doge I am bekom fat
-							big ol pupper yapper. Extremely cuuuuuute aqua doggo much ruin
-							diet snoot very jealous pupper boof length boy, ur givin me a
-							spook wow very biscit stop it fren puggorino. snoot. Heckin good
-							boys most angery pupper I have ever seen very jealous pupper pats,
-							lotsa pats puggo. Super chub heckin good boys shoober most angery
-							pupper I have ever seen, shoober maximum borkdrive. Shibe wrinkler
-							waggy wags corgo maximum borkdrive, vvv fluffer.
-						</p>
-					</details>
-					<details>
-						<summary>And another doggo</summary>
-						<p>
-							Doggo ipsum super chub snoot doggorino blop extremely cuuuuuute
-							porgo maximum borkdrive super chub, what a nice floof big ol smol
-							wow such tempt most angery pupper I have ever seen. You are doing
-							me the shock wow such tempt clouds you are doing me a frighten
-							very good spot boofers, porgo heckin good boys and girls puggo
-							heck. Pupper yapper pupperino wow very biscit floofs, vvv ruff dat
-							tungg tho.
-						</p>
-					</details>
-					<details>
-						<summary>The last doggo</summary>
-						<p>
-							Doggo ipsum mlem waggy wags corgo woofer heckin good boys and
-							girls, vvv borkf. Very taste wow heckin good boys ur givin me a
-							spook shoober smol borking doggo with a long snoot for pats, mlem
-							porgo vvv. You are doin me a concern boofers clouds snoot, puggo.
-							Dat tungg tho bork I am bekom fat doing me a frighten wrinkler, ur
-							givin me a spook stop it fren shoob the neighborhood pupper
-							yapper, porgo heckin angery woofer blop. Extremely cuuuuuute long
-							woofer shooberino I am bekom fat big ol length boy very good spot
-							heckin good boys and girls blep, very taste wow boofers shoober
-							pats snoot vvv. He made many woofs borking doggo doing me a
-							frighten maximum borkdrive heckin, wow very biscit long doggo such
-							treat. Adorable doggo tungg smol big ol pupper most angery pupper
-							I have ever seen doggorino much ruin diet, heck blep you are doing
-							me a frighten doggorino borkdrive. Adorable doggo extremely
-							cuuuuuute wrinkler yapper, such treat doggo. Long doggo lotsa pats
-							shibe thicc, puggo.
-						</p>
-					</details>
-				</accordion-tabs>
+			<p>
+				This Web Component uses an accordion pattern and switches to a tabs
+				pattern at the given breakpoint.
+			</p>
+
+			<p>
+				<a
+					href="https://github.com/mgrsskls/web-components/blob/main/accordion-tabs/index.js"
+					>Source code</a
+				>
+			</p>
+
+			<h2>Example</h2>
+
+			<div class="wrapper">
+				<div class="wc">
+					<accordion-tabs breakpoint="48rem">
+						<details>
+							<summary>A doggo</summary>
+							<p>
+								Doggo ipsum shooberino most angery pupper I have ever seen pats
+								super chub puggorino lotsa pats, fluffer woofer heckin good boys
+								and girls very jealous pupper. Shibe corgo super chub heck big
+								ol heckin angery woofer length boy, shoob most angery pupper I
+								have ever seen thicc pupper. Vvv fat boi much ruin diet puggo
+								fat boi heckin good boys and girls heckin good boys, doge I am
+								bekom fat big ol pupper yapper. Extremely cuuuuuute aqua doggo
+								much ruin diet snoot very jealous pupper boof length boy, ur
+								givin me a spook wow very biscit stop it fren puggorino. snoot.
+								Heckin good boys most angery pupper I have ever seen very
+								jealous pupper pats, lotsa pats puggo. Super chub heckin good
+								boys shoober most angery pupper I have ever seen, shoober
+								maximum borkdrive. Shibe wrinkler waggy wags corgo maximum
+								borkdrive, vvv fluffer.
+							</p>
+						</details>
+						<details>
+							<summary>And another doggo</summary>
+							<p>
+								Doggo ipsum super chub snoot doggorino blop extremely cuuuuuute
+								porgo maximum borkdrive super chub, what a nice floof big ol
+								smol wow such tempt most angery pupper I have ever seen. You are
+								doing me the shock wow such tempt clouds you are doing me a
+								frighten very good spot boofers, porgo heckin good boys and
+								girls puggo heck. Pupper yapper pupperino wow very biscit
+								floofs, vvv ruff dat tungg tho.
+							</p>
+						</details>
+						<details>
+							<summary>The last doggo</summary>
+							<p>
+								Doggo ipsum mlem waggy wags corgo woofer heckin good boys and
+								girls, vvv borkf. Very taste wow heckin good boys ur givin me a
+								spook shoober smol borking doggo with a long snoot for pats,
+								mlem porgo vvv. You are doin me a concern boofers clouds snoot,
+								puggo. Dat tungg tho bork I am bekom fat doing me a frighten
+								wrinkler, ur givin me a spook stop it fren shoob the
+								neighborhood pupper yapper, porgo heckin angery woofer blop.
+								Extremely cuuuuuute long woofer shooberino I am bekom fat big ol
+								length boy very good spot heckin good boys and girls blep, very
+								taste wow boofers shoober pats snoot vvv. He made many woofs
+								borking doggo doing me a frighten maximum borkdrive heckin, wow
+								very biscit long doggo such treat. Adorable doggo tungg smol big
+								ol pupper most angery pupper I have ever seen doggorino much
+								ruin diet, heck blep you are doing me a frighten doggorino
+								borkdrive. Adorable doggo extremely cuuuuuute wrinkler yapper,
+								such treat doggo. Long doggo lotsa pats shibe thicc, puggo.
+							</p>
+						</details>
+					</accordion-tabs>
+				</div>
 			</div>
+
+			<h2>Options</h2>
+
+			<h3><code>breakpoint</code></h3>
+
+			<p>
+				This can either be a string like <code>48rem</code>,
+				<code>48em</code> or <code>768px</code> or a number. A number would be
+				interpreted as pixels.
+			</p>
+			<p>
+				At this breakpoint, the accordion switches to tabs. Please note that
+				this is based on the inline size of the element, not on a media query.
+			</p>
+
+			<h2>Usage</h2>
+
+			To use this you need to use
+			<code>&lt;details&gt;&lt;/details&gt;</code> and
+			<code>&lt;summary&gt;&lt;/summary&gt;</code> elements:
+
+			<pre><code>&lt;accordion-tabs breakpoint="48rem"&gt;
+	&lt;details&gt;
+		&lt;summary&gt;A doggo&lt;/summary&gt;
+		&lt;p&gt;
+			…
+		&lt;/p&gt;
+	&lt;/details&gt;
+	&lt;details&gt;
+		&lt;summary&gt;And another doggo&lt;/summary&gt;
+		&lt;p&gt;
+			…
+		&lt;/p&gt;
+	&lt;/details&gt;
+	&lt;details&gt;
+		&lt;summary&gt;The last doggo&lt;/summary&gt;
+		&lt;p&gt;
+			…
+		&lt;/p&gt;
+	&lt;/details&gt;
+&lt;/accordion-tabs&gt;</code></pre>
 		</div>
+
 		<div class="ThemeToggle">
 			<theme-toggle>
 				<div class="ThemeToggle-wrapper">
@@ -152,7 +211,9 @@
 			</theme-toggle>
 		</div>
 		<script>
-			themeToggle(document.querySelector(".ThemeToggle"));
+			document.addEventListener("DOMContentLoaded", () => {
+				themeToggle(document.querySelector(".ThemeToggle"));
+			});
 		</script>
 	</body>
 </html>

@@ -1,12 +1,22 @@
+html {
+	background: var(--color-bg);
+}
+
 body {
 	background: var(--color-bg);
 	color: var(--color-text);
 	padding: clamp(1rem, 4vw, 3rem);
 	padding-block-start: 0;
+	max-inline-size: 80em;
+	margin-inline: auto;
 }
 
 .wrapper + .wrapper {
 	margin-block-start: 2rem;
+}
+
+.RichText > p {
+	max-inline-size: 80ch;
 }
 
 label {

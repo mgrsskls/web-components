@@ -16,77 +16,82 @@
 			<small>&larr; <a href="../">Web Components</a></small>
 		</p>
 
-		<h1>Theme Toggle</h1>
+		<div class="RichText">
+			<h1>Theme Toggle</h1>
 
-		<div class="wrapper">
-			<h2>Default</h2>
-			<div class="wc">
-				<theme-toggle></theme-toggle>
-			</div>
-			<h3>Input</h3>
-			<pre><code class="input"><theme-toggle></theme-toggle></code></pre>
-			<h3>Output</h3>
-			<pre><code class="output"></code></pre>
-		</div>
+			<h2>Examples</h2>
 
-		<div class="wrapper">
-			<h2>With <code>themes</code> option</h2>
-			<div class="wc">
-				<theme-toggle
-					class="themes-option"
-					themes="auto light medium dark"
-				></theme-toggle>
+			<div class="wrapper">
+				<h3>Default</h3>
+				<div class="wc">
+					<theme-toggle></theme-toggle>
+				</div>
+				<h4>Input</h4>
+				<pre><code class="input"><theme-toggle></theme-toggle></code></pre>
+				<h4>Output</h4>
+				<pre><code class="output"></code></pre>
 			</div>
-			<h3>Input</h3>
-			<pre><code class="input"><theme-toggle class="themes-option" themes="auto light medium dark"></theme-toggle></code></pre>
-			<h3>Output</h3>
-			<pre><code class="output"></code></pre>
-		</div>
 
-		<div class="wrapper">
-			<h2>With <code>name</code> option</h2>
-			<div class="wc">
-				<theme-toggle class="name-option" name="custom-name"></theme-toggle>
+			<div class="wrapper">
+				<h3>With <code>themes</code> option</h3>
+				<div class="wc">
+					<theme-toggle
+						class="themes-option"
+						themes="auto light medium dark"
+					></theme-toggle>
+				</div>
+				<h4>Input</h4>
+				<pre><code class="input"><theme-toggle class="themes-option" themes="auto light medium dark"></theme-toggle></code></pre>
+				<h4>Output</h4>
+				<pre><code class="output"></code></pre>
 			</div>
-			<h3>Input</h3>
-			<pre><code class="input"><theme-toggle class="name-option" name="custom-name"></theme-toggle></code></pre>
-			<h3>Output</h3>
-			<pre><code class="output"></code></pre>
-		</div>
 
-		<div class="wrapper">
-			<h2>With Light DOM</h2>
-			<div class="wc">
-				<theme-toggle class="light-dom">
-					<div>
-						<input
-							type="radio"
-							name="light-dom-name"
-							value="auto"
-							id="theme-auto"
-						/>
-						<label for="theme-auto">auto</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							name="light-dom-name"
-							value="light"
-							id="theme-light"
-						/>
-						<label for="theme-light">light</label>
-					</div>
-					<div>
-						<input
-							type="radio"
-							name="light-dom-name"
-							value="dark"
-							id="theme-dark"
-						/>
-						<label for="theme-dark">dark</label>
-					</div>
-				</theme-toggle>
+			<div class="wrapper">
+				<h3>With <code>name</code> option</h3>
+				<div class="wc">
+					<theme-toggle class="name-option" name="custom-name"></theme-toggle>
+				</div>
+				<h4>Input</h4>
+				<pre><code class="input"><theme-toggle class="name-option" name="custom-name"></theme-toggle></code></pre>
+				<h4>Output</h4>
+				<pre><code class="output"></code></pre>
 			</div>
+
+			<div class="wrapper">
+				<h3>With Light DOM</h3>
+				<div class="wc">
+					<theme-toggle class="light-dom">
+						<div>
+							<input
+								type="radio"
+								name="light-dom-name"
+								value="auto"
+								id="theme-auto"
+							/>
+							<label for="theme-auto">auto</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								name="light-dom-name"
+								value="light"
+								id="theme-light"
+							/>
+							<label for="theme-light">light</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								name="light-dom-name"
+								value="dark"
+								id="theme-dark"
+							/>
+							<label for="theme-dark">dark</label>
+						</div>
+					</theme-toggle>
+				</div>
+			</div>
+
 			<pre><code><theme-toggle class="light-dom">
   <div>
     <input type="radio" name="light-dom-name" value="auto" id="theme-auto">
@@ -100,6 +105,47 @@
     <input type="radio" name="light-dom-name" value="dark" id="theme-dark">
     <label for="theme-dark">dark</label>
   </div>
+</theme-toggle></code></pre>
+
+			<h2>Options</h2>
+
+			<h3><code>themes</code></h3>
+
+			<p>
+				If you want to toggle between more than <code>auto</code>,
+				<code>light</code> and <code>dark</code> themes, you can use
+				<code>themes</code> property. The value should be a space separate list
+				of theme names.
+			</p>
+
+			<h3><code>name</code></h3>
+
+			<p>
+				By default, the <code>name</code> of the input elements is
+				<code>theme</code> (or <code>theme-{n}</code> if you have more than on
+				<code>theme-toggle</code> on a page). You can change this by using the
+				<code>name</code> attribute.
+			</p>
+
+			<h2>Usage</h2>
+
+			<pre><code><theme-toggle></theme-toggle></code></pre>
+
+			<pre><code><theme-toggle name="custom-name" themes="auto light medium dark"></theme-toggle></code></pre>
+
+			<pre><code><theme-toggle>
+	<div>
+		<input type="radio" name="theme" value="auto" id="theme-auto">
+		<label for="theme-auto">auto</label>
+	</div>
+	<div>
+		<input type="radio" name="theme" value="light" id="theme-light">
+		<label for="theme-light">light</label>
+	</div>
+	<div>
+		<input type="radio" name="theme" value="dark" id="theme-dark">
+		<label for="theme-dark">dark</label>
+	</div>
 </theme-toggle></code></pre>
 		</div>
 
