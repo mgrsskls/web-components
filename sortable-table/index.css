@@ -1,5 +1,12 @@
+sortable-table {
+	display: block;
+	overflow-x: auto;
+}
+
 table {
 	border-collapse: collapse;
+	max-inline-size: 100%;
+	overflow-x: auto;
 }
 
 caption {
