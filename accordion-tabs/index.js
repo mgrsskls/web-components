@@ -14,7 +14,7 @@ customElements.define(
 
 		connectedCallback() {
 			if (this.closest("code")) return;
-			console.log("?");
+
 			this.content = [];
 
 			if (this.hasAttribute("breakpoint")) {
