@@ -73,6 +73,7 @@ accordion-tabs button {
 	appearance: none;
 	background: none;
 	border: var(--divider) transparent;
+	color: inherit;
 	font: inherit;
 	padding: 0.5em 1em;
 	margin-block-end: -0.0625em;
