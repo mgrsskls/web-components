@@ -57,8 +57,8 @@ accordion-tabs details p {
 	margin-block-start: 0;
 }
 
-accordion-tabs :not([open]) > summary::after {
-	rotate: -90deg;
+accordion-tabs [open] > summary::after {
+	rotate: -180deg;
 }
 
 accordion-tabs ol {
