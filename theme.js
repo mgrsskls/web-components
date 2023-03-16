@@ -1,4 +1,6 @@
 function themeToggle(el) {
+	if (!el) return;
+
 	const { value } = el.querySelector("input:checked");
 
 	if (value !== "auto")

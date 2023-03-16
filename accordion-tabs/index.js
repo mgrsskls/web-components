@@ -1,12 +1,15 @@
 customElements.define(
 	"accordion-tabs",
 	class AccordionTabs extends HTMLElement {
+		#accordion;
 		#breakpoint;
-		#mode;
 		#prevMode;
 		#resizeObserver;
-		#accordion;
 		#tabs;
+
+		static get observedAttributes() {
+			return ["breakpoint", "current"];
+		}
 
 		constructor() {
 			super();
@@ -42,8 +45,12 @@ customElements.define(
 			window.requestAnimationFrame(() => {
 				this.details = Array.from(this.children);
 
-				this.details.forEach((child) => {
+				this.details.forEach((child, i) => {
 					const title = child.querySelector("summary");
+
+					if (child.open) {
+						this.index = i;
+					}
 
 					this.content.push({
 						title: title.textContent,
@@ -53,29 +60,48 @@ customElements.define(
 					});
 				});
 
-				this.#resizeObserver = new ResizeObserver((entries) => {
-					for (const entry of entries) {
-						const inlineSize = entry.borderBoxSize[0].inlineSize;
+				let initialized = false;
 
-						if (inlineSize < this.#breakpoint) {
-							if (this.#mode !== "accordion") {
-								this.#renderAccordion();
-								this.#mode = this.#prevMode = "accordion";
-							}
-						} else if (this.#mode !== "tabs") {
-							this.#renderTabs();
-							this.#mode = this.#prevMode = "tabs";
+				this.#resizeObserver = new ResizeObserver((entries) => {
+					if (initialized) {
+						for (const entry of entries) {
+							this.#render(entry.borderBoxSize[0].inlineSize);
 						}
 					}
+
+					initialized = true;
 				});
 
-				this.#resizeObserver.observe(this);
+				this.#render(this.clientWidth, () => {
+					this.#resizeObserver.observe(this);
+				});
 			});
+		}
+
+		attributeChangedCallback(attr, oldValue, newValue) {
+			if (attr === "current") {
+				this.index = parseInt(newValue, 10);
+				this.#render(this.clientWidth);
+			}
 		}
 
 		disconnectedCallback() {
 			if (this.#resizeObserver) {
 				this.#resizeObserver.disconnect();
+			}
+		}
+
+		async #render(width, cb) {
+			if (!this.#breakpoint || width < this.#breakpoint) {
+				await this.#renderAccordion();
+				this.#prevMode = "accordion";
+			} else {
+				await this.#renderTabs();
+				this.#prevMode = "tabs";
+			}
+
+			if (cb) {
+				cb();
 			}
 		}
 
@@ -90,10 +116,14 @@ customElements.define(
 				this.#accordion.setElements();
 
 				this.#accordion.elements.forEach((detail) => this.appendChild(detail));
+			} else {
+				this.#accordion.render();
 			}
+
+			return true;
 		}
 
-		#renderTabs() {
+		async #renderTabs() {
 			this.#clear();
 
 			if (this.#tabs) {
@@ -111,7 +141,7 @@ customElements.define(
 				this.appendChild(item);
 			});
 
-			this.#tabs.render(false);
+			return await this.#tabs.render(false);
 		}
 
 		#clear() {
@@ -134,6 +164,8 @@ class AccordionTabsAccordion {
 					});
 				});
 		});
+
+		this.render();
 	}
 
 	setElements() {
@@ -143,6 +175,12 @@ class AccordionTabsAccordion {
 			);
 
 			detail.open = i === this.AccordionTabs.index;
+		});
+	}
+
+	render() {
+		this.elements.forEach((el, i) => {
+			el.open = i === this.AccordionTabs.index;
 		});
 	}
 
@@ -242,12 +280,12 @@ class AccordionTabsTabs {
 	/**
 	 * @returns {void}
 	 */
-	render(focus = true) {
+	async render(focus = true) {
 		this.elements[1].forEach((tabpanel, i) => {
 			tabpanel.hidden = i !== this.index;
 		});
 
-		this.#TabsList.render(focus);
+		return await this.#TabsList.render(focus);
 	}
 }
 
@@ -359,5 +397,7 @@ class AccordionTabsList {
 				button.setAttribute("tabindex", -1);
 			}
 		});
+
+		return new Promise((resolve) => setTimeout(resolve, 1000));
 	}
 }
