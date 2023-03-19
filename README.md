@@ -2,6 +2,6 @@
 
 A collection of unstyled, Light DOM based Web Components.
 
-- [Accordion / Tabs](./accordion-tabs/README.md)
-- [Sortable Table](./sortable-table/README.md)
-- [Theme Toggle](./theme-toggle/README.md)
+- [Accordion / Tabs](./accordion-tabs)
+- [Sortable Table](./sortable-table)
+- [Theme Toggle](./theme-toggle)
